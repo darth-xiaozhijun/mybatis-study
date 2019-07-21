@@ -3,6 +3,7 @@ package com.test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -25,6 +26,13 @@ public class Test {
 		for (Flower flower : list) {
 			System.out.println(flower.toString());
 		}
+		
+		int count = session.selectOne("a.b.selById");
+		System.out.println(count);
+		
+		//把数据库中哪个列的值当作map的key
+		Map<Object, Object> map = session.selectMap("a.b.c", "name");
+		System.out.println(map);
 		
 		session.close();
 	}
