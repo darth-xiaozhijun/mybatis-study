@@ -51,9 +51,9 @@ public class Test {
 		int pageNumber = 1;
 		//如果希望传递多个参数,可以使用对象或map
 		Map<String,Object> map2 = new HashMap<>();
-		map.put("pageSize", pageSize);
-		map.put("pageStart", pageSize*(pageNumber-1));
-		List<People> p = session.selectList("com.pojo.People.page",map);
+		map2.put("pageSize", pageSize);
+		map2.put("pageStart", pageSize*(pageNumber-1));
+		List<People> p = session.selectList("com.pojo.People.page",map2);
 		System.out.println(p);
 		
 		session.close();
