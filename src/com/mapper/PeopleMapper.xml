@@ -16,7 +16,7 @@
 		select * from people where id = #{id} and name = #{name}
 	</select>
 	
-	<select id="page" resultType="com.pojo.People" parameterType="map">
+	<select id="page" resultType="People" parameterType="map">
 		select * from people limit #{pageStart},#{pageSize}
 	</select>
 </mapper>
