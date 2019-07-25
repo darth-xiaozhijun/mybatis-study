@@ -2,8 +2,21 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mapper.PeopleMapper">
+<mapper namespace="com.pojo.People">
+
 	<select id="selAll" resultType="com.pojo.People">
 		select * from people
+	</select>
+	
+	<select id="selById" resultType="com.pojo.People" parameterType="int">
+		select * from people where id = #{0}
+	</select>
+	
+	<select id="selByMap" resultType="com.pojo.People" parameterType="map">
+		select * from people where id = #{id} and name = #{name}
+	</select>
+	
+	<select id="page" resultType="com.pojo.People" parameterType="map">
+		select * from people limit #{pageStart},#{pageSize}
 	</select>
 </mapper>

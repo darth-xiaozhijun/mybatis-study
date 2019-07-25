@@ -2,6 +2,7 @@ package com.test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.pojo.Flower;
+import com.pojo.People;
 
 public class Test {
 
@@ -22,17 +24,37 @@ public class Test {
 		//生产SqlSession
 		SqlSession session=factory.openSession();
 		
-		List<Flower> list = session.selectList("a.b.selAll");
-		for (Flower flower : list) {
-			System.out.println(flower.toString());
-		}
+//		List<Flower> list = session.selectList("com.pojo.Flower.selAll");
+//		for (Flower flower : list) {
+//			System.out.println(flower.toString());
+//		}
+//		
+//		int count = session.selectOne("com.pojo.Flower.selById");
+//		System.out.println(count);
+//		
+//		//把数据库中哪个列的值当作map的key
+//		Map<Object, Object> map = session.selectMap("com.pojo.Flower.c", "name");
+//		System.out.println(map);
 		
-		int count = session.selectOne("a.b.selById");
-		System.out.println(count);
+		People people = session.selectOne("com.pojo.People.selById", 2);
+		System.out.println(people);
 		
-		//把数据库中哪个列的值当作map的key
-		Map<Object, Object> map = session.selectMap("a.b.c", "name");
-		System.out.println(map);
+		Map<String, Object> map = new HashMap<>();
+		map.put("id", 2);
+		map.put("name", "李四");
+		People people2 = session.selectOne("com.pojo.People.selByMap", map);
+		System.out.println(people2);
+		
+		//显示几个
+		int pageSize = 2;
+		//第几页
+		int pageNumber = 1;
+		//如果希望传递多个参数,可以使用对象或map
+		Map<String,Object> map2 = new HashMap<>();
+		map.put("pageSize", pageSize);
+		map.put("pageStart", pageSize*(pageNumber-1));
+		List<People> p = session.selectList("com.pojo.People.page",map);
+		System.out.println(p);
 		
 		session.close();
 	}
