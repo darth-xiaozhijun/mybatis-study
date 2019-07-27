@@ -36,13 +36,13 @@ public class Test {
 //		Map<Object, Object> map = session.selectMap("com.pojo.Flower.c", "name");
 //		System.out.println(map);
 		
-		People people = session.selectOne("com.pojo.People.selById", 2);
+		People people = session.selectOne("com.mapper.PeopleMapper.selById", 2);
 		System.out.println(people);
 		
 		Map<String, Object> map = new HashMap<>();
 		map.put("id", 2);
 		map.put("name", "李四");
-		People people2 = session.selectOne("com.pojo.People.selByMap", map);
+		People people2 = session.selectOne("com.mapper.PeopleMapper.selByMap", map);
 		System.out.println(people2);
 		
 		//显示几个
@@ -53,14 +53,14 @@ public class Test {
 		Map<String,Object> map2 = new HashMap<>();
 		map2.put("pageSize", pageSize);
 		map2.put("pageStart", pageSize*(pageNumber-1));
-		List<People> peoples = session.selectList("com.pojo.People.page",map2);
+		List<People> peoples = session.selectList("com.mapper.PeopleMapper.page",map2);
 		System.out.println(peoples);
 		
 		People p = new People();
 		p.setName("新增name1");
 		p.setAge(88);
 		try {
-			int index = session.insert("com.pojo.People.ins", p);
+			int index = session.insert("com.mapper.PeopleMapper.ins", p);
 			if(index>0){
 				System.out.println("成功");
 			}else{
@@ -72,7 +72,7 @@ public class Test {
 		}
 		p.setName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
 		try {
-			int index1 = session.insert("com.pojo.People.ins", p);
+			int index1 = session.insert("com.mapper.PeopleMapper.ins", p);
 			if(index1>0){
 				System.out.println("成功");
 			}else{
