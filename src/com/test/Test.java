@@ -53,8 +53,36 @@ public class Test {
 		Map<String,Object> map2 = new HashMap<>();
 		map2.put("pageSize", pageSize);
 		map2.put("pageStart", pageSize*(pageNumber-1));
-		List<People> p = session.selectList("com.pojo.People.page",map2);
-		System.out.println(p);
+		List<People> peoples = session.selectList("com.pojo.People.page",map2);
+		System.out.println(peoples);
+		
+		People p = new People();
+		p.setName("新增name1");
+		p.setAge(88);
+		try {
+			int index = session.insert("com.pojo.People.ins", p);
+			if(index>0){
+				System.out.println("成功");
+			}else{
+				System.out.println("失败");
+			}
+		} catch (Exception e1) {
+//			e1.printStackTrace();
+			session.rollback();
+		}
+		p.setName("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+		try {
+			int index1 = session.insert("com.pojo.People.ins", p);
+			if(index1>0){
+				System.out.println("成功");
+			}else{
+				System.out.println("失败");
+			}
+		} catch (Exception e) {
+//			e.printStackTrace();
+			session.rollback();
+		}
+		session.commit();
 		
 		session.close();
 	}

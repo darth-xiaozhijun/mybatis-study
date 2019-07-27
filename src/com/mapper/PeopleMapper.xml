@@ -19,4 +19,8 @@
 	<select id="page" resultType="People" parameterType="map">
 		select * from people limit #{pageStart},#{pageSize}
 	</select>
+	
+	<insert id="ins" parameterType="People">
+		insert into people values(default,#{name},#{age})
+	</insert>
 </mapper>
