@@ -28,5 +28,6 @@
 		<mapper resource="com/mapper/FlowerMapper.xml"/>
 		<mapper resource="com/mapper/PeopleMapper.xml"/>
 		<mapper resource="com/mapper/PeopleMapper2.xml"/>
+		<mapper resource="com/mapper/AccountMapper.xml"/>
 	</mappers>
 </configuration>
