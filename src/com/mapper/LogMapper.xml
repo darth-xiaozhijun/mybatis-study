@@ -13,4 +13,11 @@
 	<select id="selCount" resultType="long">
 		select count(*) from log
 	</select>
+	<select id="selAll" resultType="log">
+		select * from log
+	</select>
+	<!-- 当多参数时,不需要写parameterType -->
+	<select id="selByAccInAccout" resultType="log" >
+		select * from log where accin=#{accin}  and accout=#{accout}
+	</select>
 </mapper>

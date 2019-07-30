@@ -29,4 +29,8 @@ public class Log {
 	public void setMoney(double money) {
 		this.money = money;
 	}
+	@Override
+	public String toString() {
+		return "Log [id=" + id + ", accIn=" + accIn + ", accOut=" + accOut + ", money=" + money + "]";
+	}
 }
