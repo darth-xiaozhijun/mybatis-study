@@ -34,7 +34,7 @@ public class TransferServlet extends HttpServlet{
 		accIn.setName(req.getParameter("accInName"));
 		int index = accService.transfer(accIn, accOut);
 		if(index==AccountService.SUCCESS){
-			resp.sendRedirect("/mybatis-study/log.jsp");
+			resp.sendRedirect("/mybatis-study/log");
 		}else{
 			HttpSession session = req.getSession();
 			session.setAttribute("code", index);

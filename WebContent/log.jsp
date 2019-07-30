@@ -22,7 +22,7 @@
 		</tr>
 	</c:forEach>
 </table>
-<a href="show?pageSize=${pageinfo.pageSize }&pageNumber=${pageinfo.pageNumber-1}" <c:if test="${pageinfo.pageNumber<=1 }"> onclick="javascript:return false;"</c:if>>上一页</a>
-<a href="show?pageSize=${pageinfo.pageSize }&pageNumber=${pageinfo.pageNumber+1}" <c:if test="${pageinfo.pageNumber>=pageinfo.total }"> onclick="javascript:return false;"</c:if>>下一页</a>
+<a href="log?pageSize=${pageinfo.pageSize }&pageNumber=${pageinfo.pageNumber-1}" <c:if test="${pageinfo.pageNumber<=1 }"> onclick="javascript:return false;"</c:if>>上一页</a>
+<a href="log?pageSize=${pageinfo.pageSize }&pageNumber=${pageinfo.pageNumber+1}" <c:if test="${pageinfo.pageNumber>=pageinfo.total }"> onclick="javascript:return false;"</c:if>>下一页</a>
 </body>
 </html>

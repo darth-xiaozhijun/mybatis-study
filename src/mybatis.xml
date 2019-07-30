@@ -29,5 +29,6 @@
 		<mapper resource="com/mapper/PeopleMapper.xml"/>
 		<mapper resource="com/mapper/PeopleMapper2.xml"/>
 		<mapper resource="com/mapper/AccountMapper.xml"/>
+		<mapper resource="com/mapper/LogMapper.xml"/>
 	</mappers>
 </configuration>
