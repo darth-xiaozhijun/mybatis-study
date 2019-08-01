@@ -115,4 +115,8 @@
 	<sql id="mysql">
 		id,accin,accout,money
 	</sql>
+	
+	<insert id="insert" parameterType="log">
+		insert into log values(default,#{accOut},#{accIn},#{money})
+	</insert>
 </mapper>

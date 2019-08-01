@@ -13,4 +13,7 @@ public interface LogService  {
 	 * @return
 	 */
 	PageInfo<Log> showPage(int pageSize,int pageNumber) throws IOException;
+	
+	int ins(Log log);
+	
 }

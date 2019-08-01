@@ -11,8 +11,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.mapper.LogMapper;
 import com.pojo.Log;
 import com.service.LogService;
+import com.utils.MyBatisUtil;
 import com.utils.PageInfo;
 
 public class LogServiceImpl implements LogService {
@@ -35,4 +37,10 @@ public class LogServiceImpl implements LogService {
 		return pi;
 	}
 
+	@Override
+	public int ins(Log log) {
+		SqlSession session = MyBatisUtil.getSession();
+		LogMapper mapper = session.getMapper(LogMapper.class);
+		return mapper.insert(log);
+	}
 }

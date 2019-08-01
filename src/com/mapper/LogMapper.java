@@ -28,4 +28,6 @@ public interface LogMapper {
 	
 	
 	int ins(List<Integer> list);
+	
+	int insert(Log log);
 }
