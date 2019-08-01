@@ -17,4 +17,15 @@ public interface LogMapper {
 	 * @return
 	 */
 	List<Log> selByAccInAccout(@Param("accin") String accin123,@Param("accout") String accout3454235);
+	
+	int upd(Log log);
+	
+	
+	List<Log> selByLog(Log log);
+	
+	
+	List<Log> selIn(List<Integer> list);
+	
+	
+	int ins(List<Integer> list);
 }
