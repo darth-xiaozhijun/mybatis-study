@@ -16,6 +16,8 @@ public class PageInfo<T> {
 	private int pageNumber;
 	//总页数
 	private long total;
+	//起始行
+	private int pageStart;
 	//当前页显示的数据
 	private List<T> list;
 	
@@ -43,6 +45,11 @@ public class PageInfo<T> {
 	public void setList(List<T> list) {
 		this.list = list;
 	}
-	
+	public int getPageStart() {
+		return pageStart;
+	}
+	public void setPageStart(int pageStart) {
+		this.pageStart = pageStart;
+	}
 	
 }

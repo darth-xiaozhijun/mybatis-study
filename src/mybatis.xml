@@ -25,10 +25,11 @@
 		</environment>
 	</environments>
 	<mappers>
-		<mapper resource="com/mapper/FlowerMapper.xml"/>
+		<!-- <mapper resource="com/mapper/FlowerMapper.xml"/>
 		<mapper resource="com/mapper/PeopleMapper.xml"/>
 		<mapper resource="com/mapper/PeopleMapper2.xml"/>
 		<mapper resource="com/mapper/AccountMapper.xml"/>
-		<mapper resource="com/mapper/LogMapper.xml"/>
+		<mapper resource="com/mapper/LogMapper.xml"/> -->
+		<package name="com.mapper"/>
 	</mappers>
 </configuration>
