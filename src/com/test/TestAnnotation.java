@@ -24,6 +24,7 @@ public class TestAnnotation {
 //		List<Teacher> list = teacherMapper.selectAll();
 //		System.out.println(list);
 		
+		
 		Teacher teacher = new Teacher();
 //		teacher.setName("≤‚ ‘");
 		teacher.setId(4);
