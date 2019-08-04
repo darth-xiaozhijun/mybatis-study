@@ -36,5 +36,9 @@ public class Student {
 	public void setTeacher(Teacher teacher) {
 		this.teacher = teacher;
 	}
+	@Override
+	public String toString() {
+		return "Student [id=" + id + ", name=" + name + ", age=" + age + ", tid=" + tid + ", teacher=" + teacher + "]";
+	}
 	
 }
