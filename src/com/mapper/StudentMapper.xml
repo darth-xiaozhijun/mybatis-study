@@ -60,4 +60,9 @@
 	<select id="selByTid" parameterType="int" resultType="student">
 		select * from student where tid=#{0}
 	</select>
+	
+	<select id="selAll2" resultType="student">
+		select t.id `teacher.id`,t.name `teacher.name`,s.id id,s.name name,age,tid 
+from student s LEFT JOIN teacher t on t.id=s.tid
+	</select>
 </mapper>

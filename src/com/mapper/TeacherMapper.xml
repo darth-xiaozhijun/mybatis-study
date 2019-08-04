@@ -33,4 +33,7 @@
 	<select id="selAll1" resultMap="mymap1">
 		select t.id tid,t.name tname,s.id sid,s.name sname,age,tid from teacher t LEFT JOIN student s on t.id=s.tid;
 	</select>
+	<select id="selAll2" resultType="teacher">
+		select t.id id,t.name name,s.id `list.id`,s.name `list.name`,age `list.age`,tid `list.tid` from teacher t LEFT JOIN student s on t.id=s.tid
+	</select>
 </mapper>
