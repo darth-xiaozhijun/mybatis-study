@@ -1,8 +1,11 @@
 package com.pojo;
 
+import java.util.List;
+
 public class Teacher {
 	private int id;
 	private String name;
+	private List<Student> list;
 	public int getId() {
 		return id;
 	}
@@ -15,9 +18,14 @@ public class Teacher {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public List<Student> getList() {
+		return list;
+	}
+	public void setList(List<Student> list) {
+		this.list = list;
+	}
 	@Override
 	public String toString() {
-		return "Teacher [id=" + id + ", name=" + name + "]";
+		return "Teacher [id=" + id + ", name=" + name + ", list=" + list + "]";
 	}
-	
 }

@@ -9,6 +9,7 @@
 		<id column="id" property="id"/>
 		<!-- 其他列使用result标签配置映射关系 -->
 		<result column="name" property="name"/>
+		<collection property="list" ofType="student" select="com.mapper.StudentMapper.selByTid" column="id"></collection>
 	</resultMap>
 
 	<select id="selById" parameterType="int" resultType="teacher">
@@ -17,5 +18,19 @@
 	
 	<select id="selAll" resultMap="myresultmap">
 		select * from teacher
+	</select>
+	
+	<resultMap type="teacher" id="mymap1">
+		<id column="tid" property="id"/>
+		<result column="tname" property="name"/>
+		<collection property="list" ofType="student" >
+			<id column="sid" property="id"/>
+			<result column="sname" property="name"/>
+			<result column="age" property="age"/>
+			<result column="tid" property="tid"/>
+		</collection>
+	</resultMap>
+	<select id="selAll1" resultMap="mymap1">
+		select t.id tid,t.name tname,s.id sid,s.name sname,age,tid from teacher t LEFT JOIN student s on t.id=s.tid;
 	</select>
 </mapper>

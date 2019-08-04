@@ -56,4 +56,8 @@
 	<select id="selAll1" resultMap="stuMap1">
 		select s.id sid,s.name sname,age age,t.id tid,t.name tname FROM student s left outer join teacher t on s.tid=t.id
 	</select>
+	
+	<select id="selByTid" parameterType="int" resultType="student">
+		select * from student where tid=#{0}
+	</select>
 </mapper>

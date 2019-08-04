@@ -22,7 +22,12 @@ public class TestResultMap {
 		
 		
 //		List<Teacher> list = session.selectList("com.mapper.TeacherMapper.selAll");
-		List<Student> list = session.selectList("com.mapper.StudentMapper.selAll1");
+//		List<Student> list = session.selectList("com.mapper.StudentMapper.selAll1");
+//		List<Teacher> list = session.selectList("com.mapper.TeacherMapper.selAll");
+		List<Teacher> list = session.selectList("com.mapper.TeacherMapper.selAll1");
+		for (Teacher teacher : list) {
+			System.out.println(teacher);
+		}
 
 		System.out.println(list);
 		
